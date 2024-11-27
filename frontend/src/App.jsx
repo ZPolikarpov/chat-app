@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage'
 import { axiosInstance } from './lib/axios'
 import { useAuthStore } from './store/useAuthsStore'
 import { Loader } from 'lucide-react'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   const {authUser, checkAuth, isCheckingAuth} = useAuthStore()
@@ -37,6 +38,9 @@ const App = () => {
         <Route path='/profile' element={authUser ? <ProfilePage/> : <Navigate to='/login'/>} />
 
       </Routes>
+
+      {/* Message Toast Component */}
+      <Toaster />
     </div>
   )
 }
