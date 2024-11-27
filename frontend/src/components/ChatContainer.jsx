@@ -4,6 +4,7 @@ import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
 import MessageSkeleton from "./skeletons/MessageSkeleton";
 import { useAuthStore } from "../store/useAuthStore";
+import { formatMessageTime } from "../lib/utils";
 
 const ChatContainer = () => {
   const { messages, getMessages, isMessagesLoading, selectedUser } = useChatStore();
@@ -12,13 +13,6 @@ const ChatContainer = () => {
   useEffect(() => {
     getMessages(selectedUser._id);
   }, [getMessages, selectedUser._id])
-
-  const formatMessageTime = (timestamp) => {
-    const date = new Date(timestamp);
-    const hours = date.getHours().toString().padStart(2, "0");
-    const minutes = date.getMinutes().toString().padStart(2, "0");
-    return `${hours}:${minutes}`;
-  }
 
   if (isMessagesLoading) return (
     <div className="flex-1 flex flex-col overflow-auto">
