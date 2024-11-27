@@ -1,4 +1,4 @@
-import { useAuthStore } from '../store/useAuthsStore.js';
+import { useAuthStore } from '../store/useAuthStore.js';
 import { useState } from 'react';
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';

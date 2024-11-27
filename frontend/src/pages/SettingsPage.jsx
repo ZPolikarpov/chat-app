@@ -6,15 +6,11 @@ const PREVIEW_MESSAGES = [
   {
     id: 1,
     content: "Hello, how are you?",
-    sender: "John",
-    timestamp: "2023-08-20T10:00:00Z",
     isSent: true,
   },
   {
     id: 2,
     content: "I'm good, thanks! How about you?",
-    sender: "Alice",
-    timestamp: "2023-08-20T10:05:00Z",
     isSent: false,
   },
 ]
